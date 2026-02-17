@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Enrollment Form</title>
+</head>
+<body>
+
+<h1>Course Enrollment Form</h1>
+
+<form action="entrollsucess.html" method="get">
+
+    <!-- Name -->
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <br><br>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <br><br>
+
+    <!-- Course Selection with Datalist -->
+    <label for="course">Select Course:</label>
+    <input list="courses" id="course" name="course" placeholder="Choose a course" required>
+    <datalist id="courses">
+        <option value="HTML & CSS">
+        <option value="JavaScript">
+        <option value="Python">
+        <option value="Java">
+        <option value="React">
+    </datalist>
+    <br><br>
+
+    <!-- Skill Level using Meter -->
+    <label for="skill">Skill Level:</label>
+    <meter id="skill" name="skill" min="0" max="100" value="50" low="25" high="75" optimum="50">
+        Beginner
+    </meter>
+    <br><br>
+
+    <!-- Enrollment Completion using Progress -->
+    <label for="progress">Enrollment Completion:</label>
+    <progress id="progress" value="40" max="100"></progress>
+    <br><br>
+
+    <!-- Age -->
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="10" max="100" required>
+    <br><br>
+
+    <!-- Learning Hours per Week -->
+    <label for="hours">Learning Hours per Week:</label>
+    <input type="range" id="hours" name="hours" min="1" max="40" value="10">
+    <br><br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Enroll">
+
+</form>
+
+</body>
+</html>

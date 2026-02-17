@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Development Center - Contact</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Skill Development Center</h1>
+        <nav>
+            <a href="coaching home.html">Home</a> |
+            <a href="courses.html">Courses</a> |
+            <a href="coaching home.html#about">About US</a> |
+            <a href="coachingcontact.html">Contact</a> |
+             <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </nav>
+    </header>
+
+    <!-- Contact / Registration Section -->
+    <section>
+        <h2>Registration Form</h2>
+
+        <!-- Form submits to separate success page -->
+        <form action="success.html" method="get">
+            Name:
+            <input type="text" placeholder="Enter your name" required>
+            <br><br>
+
+            Email:
+            <input type="email" placeholder="Enter your email" required>
+            <br><br>
+
+            Password:
+            <input type="password" placeholder="Enter password" required>
+            <br><br>
+
+            Gender:
+            <input type="radio" name="gender" required> Male
+            <input type="radio" name="gender"> Female
+            <br><br>
+
+            Course:
+            <input type="text" list="courses" placeholder="Select course" required>
+            <datalist id="courses">
+                <option value="HTML & CSS">
+                <option value="Java">
+            </datalist>
+            <br><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Thank you for visiting</p>
+    </footer>
+
+</body>
+</html>
