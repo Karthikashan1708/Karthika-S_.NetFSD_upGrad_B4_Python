@@ -1,0 +1,103 @@
+/* Page Background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #bfcfee, #2a5298);
+}
+
+/* Header */
+header {
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 18px;
+    color: #962205;
+}
+
+/* About Section */
+.about {
+    background: rgba(225, 172, 172, 0.9);
+    padding: 20px;
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 20px;
+    
+}
+
+.about p {
+    color: #020518;
+}
+
+.about h2 {
+    color: #152bb9;
+}
+
+/* Box Model Example */
+.box {
+    width: 320px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+    background: rgb(240, 179, 179);
+}
+.box h3 {
+    color: #152bb9;
+}
+/* Form */
+.form-container {
+    width: 350px;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(246, 168, 168, 0.95);
+    border-radius: 20px;
+    text-align: center;
+}
+.form-container h2 {
+    color: #152bb9;
+}
+form {
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 15px;
+    border-radius: 5px;
+    border: 1px solid #d45c5c;
+}
+
+.gender {
+    margin-bottom: 15px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #f06a0a;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #163d73;
+}

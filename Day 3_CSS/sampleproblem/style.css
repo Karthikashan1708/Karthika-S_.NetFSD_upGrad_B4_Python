@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #8face2;
+    color: rgb(12, 12, 12);
+    padding: 15px;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.nav-links li {
+    margin: 10px 0;
+}
+
+.nav-links a {
+    color: rgb(19, 19, 19);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("back_pizza.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: rgb(162, 59, 59);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Pizza Grid */
+.pizza-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #c0392b;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Form */
+.contact {
+     height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("contactback.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact h2 {
+color: #f4f4f4;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: #c0392b;
+    color: rgb(12, 12, 12);
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: rgb(118, 6, 6);
+    padding: 15px;
+    text-align: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .pizza-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+    .pizza-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

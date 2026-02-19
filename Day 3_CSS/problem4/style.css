@@ -1,0 +1,79 @@
+/* Element Selector */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f4f6f9;
+}
+
+/* Header Styling */
+header {
+    background-color: #f25116b1;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Flexbox Layout */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Blog Card Styling */
+.blog-card {
+    background-color: rgb(235, 136, 136);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    flex: 1 1 30%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+/* Typography */
+.blog-card h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.blog-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Button Styling */
+.blog-card button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* Hover Effect */
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ----------------- */
+/* Responsive Design */
+/* ----------------- */
+
+/* Tablet View */
+@media (max-width: 992px) {
+    .blog-card {
+        flex: 1 1 45%;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .blog-card {
+        flex: 1 1 100%;
+    }
+}

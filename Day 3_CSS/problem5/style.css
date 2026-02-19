@@ -1,0 +1,100 @@
+/* Element Selector */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121313;
+}
+
+/* Flex Layout for Page */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #8ebff0c2;
+    color: rgb(12, 8, 8);
+    padding: 2rem 1rem;
+    flex: 1;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+    flex: 4;
+    padding: 2rem;
+}
+
+.main-content h1{
+    color: aliceblue;
+}
+
+/* Card Layout using Flexbox */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Card Styling (Box Model Applied) */
+.card {
+    background-color: rgba(247, 137, 137, 0.536);
+    border: 1px solid #120f0f;
+    padding: 1.5rem;
+    flex: 1 1 45%;
+    border-radius: 8px;
+}
+
+/* ---------------- */
+/* Responsive Part  */
+/* ---------------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    /* Sidebar becomes top navigation */
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .sidebar ul li {
+        margin: 0;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+}

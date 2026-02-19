@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Delight - Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🍕 Pizza Delight</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="order.html">Order</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="section">
+    <h2>Place Your Order</h2>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="tel" placeholder="Phone Number" required>
+
+        <select required>
+            <option value="">Select Pizza</option>
+            <option>Chicken Fiesta - ₹199</option>
+            <option>Burger Pizza - ₹249</option>
+            <option>Cheese Pizza - ₹299</option>
+        </select>
+
+        <input type="number" placeholder="Quantity" min="1" required>
+
+        <textarea placeholder="Delivery Address" rows="4" required></textarea>
+
+        <button type="submit">Confirm Order</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Pizza Delight | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

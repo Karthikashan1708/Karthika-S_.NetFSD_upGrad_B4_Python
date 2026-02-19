@@ -1,0 +1,43 @@
+/* Element Selector */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #d1def3;
+    margin: 0;
+}
+
+/* Class Selector */
+.features-section {
+    width: 60%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+/* Descendant Selector */
+.features-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* Element Selector */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Class Selector */
+.feature-item {
+    background-color: #ffffff;
+    color: #34495e;
+    padding: 15px;
+    margin: 12px 0;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.feature-item:hover {
+    background-color: #ea439c;
+    color: #ffffff;
+    transform: translateY(-5px);
+}

@@ -1,0 +1,63 @@
+/* Page Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c4defa;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: rgb(176, 184, 185);
+    width: 300px;
+    text-align: center;
+
+    /* CSS Box Model */
+    padding: 25px;        /* spacing inside */
+    margin: 20px;         /* space from page edges */
+    border: 2px solid #333;
+
+    border-radius: 12px;
+}
+
+/* Name Styling */
+.name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #dd7514;
+}
+
+/* Role Styling */
+.role {
+    color: #1b4ac1;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Bio Styling */
+.bio {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #100f0f;
+    margin-bottom: 20px;
+}
+
+/* Contact Button */
+.contact-btn {
+    background-color: #dd7514;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.contact-btn:hover {
+    background-color: #0056b3;
+}
