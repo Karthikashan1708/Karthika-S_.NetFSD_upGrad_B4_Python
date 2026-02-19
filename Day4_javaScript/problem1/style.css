@@ -1,0 +1,50 @@
+/* Default Desktop Styles */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(145, 204, 234);
+    text-align: center;
+}
+
+header {
+    background-color: rgb(218, 50, 8);
+    color: white;
+    padding: 20px;
+}
+
+nav {
+    background-color: #241a1a;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+section {
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* Media Query for Mobile */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        background-color: rgb(99, 97, 224);   /* Background change */
+    }
+
+    nav a {
+        display: block;                 /* Vertical navigation */
+        margin: 10px 0;
+        font-size: 16px;                /* Smaller font */
+    }
+
+    section {
+        font-size: 16px;                /* Adjust text size */
+    }
+}

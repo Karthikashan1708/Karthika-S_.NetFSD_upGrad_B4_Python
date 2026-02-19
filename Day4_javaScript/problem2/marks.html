@@ -1,0 +1,50 @@
+<!-- Requirements
+Accept the student’s marks as a variable
+Use if–else statements to assign grades:
+Marks ≥ 75 → Grade A
+Marks ≥ 60 → Grade B
+Marks ≥ 40 → Grade C
+Marks < 40 → Fail
+Display the grade on the web page or console -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Evaluator</title>
+</head>
+<body>
+
+<h1>Student Grade Evaluator</h1>
+
+<script>
+
+    // Get marks from user
+    let marks = Number(prompt("Enter student marks:"));
+
+    let grade;
+
+    // Check invalid input
+    if (isNaN(marks)) {
+        grade = "Invalid Result";
+    }
+    else if (marks >= 75) {
+        grade = "Grade A";
+    }
+    else if (marks >= 60) {
+        grade = "Grade B";
+    }
+    else if (marks >= 40) {
+        grade = "Grade C";
+    }
+    else {
+        grade = "Fail";
+    }
+
+    // Display result on webpage
+    document.write("Result: " + grade);
+
+</script>
+
+</body>
+</html>

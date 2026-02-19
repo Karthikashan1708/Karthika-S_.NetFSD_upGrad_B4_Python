@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First-Class Function Console</title>
+</head>
+<body>
+    <script>
+        // Store function in variable
+        let greet = name => "Hello, " + name;
+
+        // Pass function as argument and call
+        function show(fn) {
+            console.log(fn("Karthika")); // prints in console
+        }
+
+        show(greet);
+    </script>
+</body>
+</html>

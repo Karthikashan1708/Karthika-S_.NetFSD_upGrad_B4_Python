@@ -1,0 +1,48 @@
+<!--  Requirements
+Store signal color in a variable ("red", "yellow", "green")
+Use a switch statement to display:
+Red → Stop
+Yellow → Get Ready
+Green → Go
+Handle invalid signal input gracefully -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Signal Simulator</title>
+</head>
+<body>
+
+<h2>Traffic Signal Simulator</h2>
+
+<script>
+
+    // Get signal color from user
+    let signal = prompt("Enter signal color (red, yellow, green):");
+
+    // Convert input to lowercase (so RED, Red also works)
+    signal = signal.toLowerCase();
+
+    // Use switch statement
+    switch(signal) {
+
+        case "red":
+            console.log("Stop");
+            break;
+
+        case "yellow":
+            console.log("Get Ready");
+            break;
+
+        case "green":
+            console.log("Go");
+            break;
+
+        default:
+            console.log("Invalid signal color");
+    }
+
+</script>
+
+</body>
+</html>
