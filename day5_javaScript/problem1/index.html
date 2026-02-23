@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Greeting Generator</h2>
+
+        <input type="text" id="username" placeholder="Enter your name">
+
+        <button onclick="handleGreeting()">Generate Greeting</button>
+
+        <p id="greetingMessage"></p>
+    </div>
+
+    <script>
+        function handleGreeting() {
+            var name = document.getElementById("username").value;
+            generateGreeting(name);
+        }
+
+        function generateGreeting(name) {
+            var message = "Hello, " + name + "! Welcome to our website.";
+            document.getElementById("greetingMessage").innerHTML = message;
+        }
+    </script>
+
+</body>
+</html>

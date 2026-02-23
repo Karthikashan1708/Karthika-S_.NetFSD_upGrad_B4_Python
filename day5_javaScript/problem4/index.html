@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Student Profile Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Profile</h2>
+
+    <div id="profileCard"></div>
+
+    <input type="number" id="newMarks" placeholder="Enter new marks">
+    <button type="button" id="updateBtn">Update Marks</button>
+</div>
+
+<script>
+
+// Global student object
+let student = {
+    name: "Karthika",
+    rollNo: 101,
+    marks: 80
+};
+
+// Function to display student profile
+function updateStudentProfile(studentObj) {
+    document.getElementById("profileCard").innerHTML =
+        "Name: " + studentObj.name + "<br>" +
+        "Roll No: " + studentObj.rollNo + "<br>" +
+        "Marks: " + studentObj.marks;
+}
+
+// Function to update marks
+function updateMarks(newMarks) {
+    student.marks = newMarks;
+    updateStudentProfile(student);
+}
+
+// Button click event
+document.getElementById("updateBtn").addEventListener("click", function () {
+    let marks = document.getElementById("newMarks").value;
+    if (marks !== "") {
+        updateMarks(marks);
+    }
+});
+
+// Initial display
+updateStudentProfile(student);
+
+</script>
+
+</body>
+</html>
