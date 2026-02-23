@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ff777700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgba(164, 132, 128, 0.296);
+    padding: 25px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(21, 19, 19, 0.2);
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0eabe4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e04e10;
+}
+
+.output {
+    margin-top: 20px;
+}
+
+#statusMsg {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#coords {
+    color: green;
+}

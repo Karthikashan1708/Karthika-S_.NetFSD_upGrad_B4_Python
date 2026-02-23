@@ -1,0 +1,72 @@
+/* Full page styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4e72df56, #1cc88a);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main heading */
+h2 {
+    color: white;
+    margin-top: 30px;
+}
+
+/* Input fields */
+input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+    border: none;
+    width: 200px;
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #f65d3e;
+    transition: 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+/* Expense list container */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Each expense item */
+li {
+    background: white;
+    margin: 10px auto;
+    padding: 12px;
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Delete button inside list */
+li button {
+    background-color: #e74a3b;
+    color: white;
+}
+
+li button:hover {
+    background-color: #2b4ec0bf;
+}

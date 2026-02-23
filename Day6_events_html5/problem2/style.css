@@ -1,0 +1,60 @@
+/* Page background and center alignment */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4a6a655;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container box */
+.container {
+    background: rgba(207, 237, 248, 0.293);
+    padding: 25px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(44, 34, 34, 0.2);
+}
+
+/* Align label, input and message properly */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Input styling */
+input {
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Error message styling */
+small {
+    color: rgb(252, 58, 58);
+    margin-top: 3px;
+}
+
+/* Submit button styling */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e16c57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0077b3;
+}
+
+/* Success message styling */
+#successMsg {
+    margin-top: 15px;
+    font-weight: bold;
+    color: rgb(49, 242, 103);
+}

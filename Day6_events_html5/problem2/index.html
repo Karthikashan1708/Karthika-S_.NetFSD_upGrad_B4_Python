@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Form Validation</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+
+    <!-- Name Field -->
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="text" id="name" onchange="validateName()">
+        <small id="nameMsg"></small>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="text" id="email" onchange="validateEmail()">
+        <small id="emailMsg"></small>
+    </div>
+
+    <!-- Age Field -->
+    <div class="form-group">
+        <label>Age:</label>
+        <input type="number" id="age" onchange="validateAge()">
+        <small id="ageMsg"></small>
+    </div>
+
+    <!-- Submit Button -->
+    <button onclick="submitForm()">Submit</button>
+
+    <!-- Overall Success/Error Message -->
+    <p id="successMsg"></p>
+</div>
+
+<script>
+    // Validate Name
+    function validateName() {
+        var name = document.getElementById("name").value;
+        if (name === "") {
+            document.getElementById("nameMsg").innerText = "Name cannot be empty";
+        } else {
+            document.getElementById("nameMsg").innerText = "";
+        }
+    }
+
+    // Validate Email
+    function validateEmail() {
+        var email = document.getElementById("email").value;
+        if (!email.includes("@")) {
+            document.getElementById("emailMsg").innerText = "Email must contain @";
+        } else {
+            document.getElementById("emailMsg").innerText = "";
+        }
+    }
+
+    // Validate Age
+    function validateAge() {
+        var age = document.getElementById("age").value;
+        if (age <= 18 || age === "") {
+            document.getElementById("ageMsg").innerText = "Age must be greater than 18";
+        } else {
+            document.getElementById("ageMsg").innerText = "";
+        }
+    }
+
+    // Submit Form
+    function submitForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var age = document.getElementById("age").value;
+
+        // Run per-field validation again on submit
+        validateName();
+        validateEmail();
+        validateAge();
+
+        // If all validations pass
+        if (name !== "" && email.includes("@") && age > 18) {
+            sessionStorage.setItem("userName", name);
+            sessionStorage.setItem("userEmail", email);
+            sessionStorage.setItem("userAge", age);
+
+            document.getElementById("successMsg").innerText =
+                "Form submitted successfully!";
+        } else {
+            document.getElementById("successMsg").innerText =
+                "All fields must be fill to submit the form.";
+        }
+    }
+</script>
+
+</body>
+</html>
+
+ <!--  
+📌 Requirements
+Fields:
+Name
+Email
+Age
+Use:
+onchange
+onclick
+Validate:
+Name cannot be empty
+Email must contain "@"
+Age must be greater than 18
+Display validation message dynamically.
+Store valid user data in sessionStorage.-->

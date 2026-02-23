@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geo Location Logger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Geo Location Logger</h2>
+
+    <button onclick="getLocation()">Get My Location</button>
+
+    <div class="output">
+        <p id="statusMsg"></p>
+        <p id="coords"></p>
+    </div>
+
+    <h3>Location History (Last 5)</h3>
+    <ul id="historyList"></ul>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    displayHistory();
+});
+
+function getLocation() {
+    const status = document.getElementById("statusMsg");
+    const coords = document.getElementById("coords");
+
+    if (!navigator.geolocation) {
+        status.textContent = "Geolocation is not supported.";
+        return;
+    }
+
+    status.textContent = "Locating...";
+
+    navigator.geolocation.getCurrentPosition(
+        showPosition,
+        showError,
+        {
+            timeout: 3000   // ✅ 3 seconds timeout
+        }
+    );
+}
+
+function showPosition(position) {
+    const status = document.getElementById("statusMsg");
+    const coords = document.getElementById("coords");
+
+    const latitude = position.coords.latitude.toFixed(6);
+    const longitude = position.coords.longitude.toFixed(6);
+
+    status.textContent = "Location Found!";
+    coords.textContent = `Latitude: ${latitude} | Longitude: ${longitude}`;
+
+    const locationData = {
+        lat: latitude,
+        lon: longitude,
+        time: new Date().toLocaleString()
+    };
+
+    saveLocation(locationData);
+    displayHistory();
+}
+
+function showError(error) {
+    const status = document.getElementById("statusMsg");
+    const coords = document.getElementById("coords");
+
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            status.textContent = "Permission denied by user.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            status.textContent = "Location information unavailable.";
+            break;
+        case error.TIMEOUT:
+            status.textContent = "Request timed out (3 seconds limit).";
+            break;
+        default:
+            status.textContent = "An unknown error occurred.";
+    }
+
+    coords.textContent = "";
+}
+
+function saveLocation(data) {
+    let history = JSON.parse(localStorage.getItem("locationHistory")) || [];
+
+    history.push(data);
+
+    if (history.length > 5) {
+        history = history.slice(-5);
+    }
+
+    localStorage.setItem("locationHistory", JSON.stringify(history));
+}
+
+function displayHistory() {
+    const list = document.getElementById("historyList");
+    list.innerHTML = "";
+
+    const history = JSON.parse(localStorage.getItem("locationHistory")) || [];
+
+    history.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `Lat: ${item.lat}, Lon: ${item.lon} (${item.time})`;
+        list.appendChild(li);
+    });
+}
+
+</script>
+
+</body>
+</html>
+
+<!--  requirements
+Button: Get My Location
+Use:
+navigator.geolocation.getCurrentPosition()
+Display:
+Latitude
+Longitude
+Handle:
+Permission denied
+Timeout
+Location unavailable
+Save last 5 location entries in localStorage.
+Display location history on page load
+
+<!--  requirements
+Button: Get My Location
+Use:
+navigator.geolocation.getCurrentPosition()
+Display:
+Latitude
+Longitude
+Handle:
+Permission denied
+Timeout
+Location unavailable
+Save last 5 location entries in localStorage.
+Display location history on page load

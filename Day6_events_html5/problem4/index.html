@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Mini Expense Tracker</h2>
+
+    <div class="container">
+        <input type="text" id="title" placeholder="Expense Title" required>
+        <input type="number" id="amount" placeholder="Amount" required>
+        <input type="date" id="date" required>
+
+        <button onclick="addExpense()">Add Expense</button>
+        <button onclick="viewExpenses()">View Expenses</button>
+    </div>
+
+    <ul id="expenseList"></ul>
+
+<script>
+
+let db;
+
+// ===== OPEN DATABASE =====
+let request = indexedDB.open("ExpenseDB", 1);
+
+// CREATE TABLE → objectStore
+request.onupgradeneeded = function(event) {
+    db = event.target.result;
+
+    if (!db.objectStoreNames.contains("expenses")) {
+        db.createObjectStore("expenses", {
+            keyPath: "id",
+            autoIncrement: true
+        });
+    }
+};
+
+// SUCCESS
+request.onsuccess = function(event) {
+    db = event.target.result;
+    console.log("Database opened successfully");
+};
+
+// ERROR
+request.onerror = function() {
+    alert("Database failed to open");
+};
+
+// ===== INSERT → add() =====
+function addExpense() {
+
+    let title = document.getElementById("title").value;
+    let amount = document.getElementById("amount").value;
+    let date = document.getElementById("date").value;
+
+    if (title === "" || amount === "" || date === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    let transaction = db.transaction(["expenses"], "readwrite");
+    let store = transaction.objectStore("expenses");
+
+    let expense = {
+        title: title,
+        amount: amount,
+        date: date
+    };
+
+    let addRequest = store.add(expense);
+
+    addRequest.onsuccess = function() {
+        alert("Expense Added Successfully");
+        document.getElementById("title").value = "";
+        document.getElementById("amount").value = "";
+        document.getElementById("date").value = "";
+        viewExpenses();
+    };
+
+    addRequest.onerror = function() {
+        alert("Error Adding Expense");
+    };
+}
+
+// ===== SELECT → getAll() =====
+function viewExpenses() {
+
+    let transaction = db.transaction(["expenses"], "readonly");
+    let store = transaction.objectStore("expenses");
+
+    let getRequest = store.getAll();
+
+    getRequest.onsuccess = function() {
+
+        let expenses = getRequest.result;
+        let list = document.getElementById("expenseList");
+        list.innerHTML = "";
+
+        if (expenses.length === 0) {
+            list.innerHTML = "<li>No expenses found</li>";
+            return;
+        }
+
+        expenses.forEach(function(exp) {
+
+            let li = document.createElement("li");
+
+            li.innerHTML = `
+                <span>
+                    <strong>${exp.title}</strong> |
+                    ₹${exp.amount} |
+                    ${exp.date}
+                </span>
+                <button onclick="deleteExpense(${exp.id})">Delete</button>
+            `;
+
+            list.appendChild(li);
+        });
+    };
+
+    getRequest.onerror = function() {
+        alert("Error fetching expenses");
+    };
+}
+
+// ===== DELETE → delete() =====
+function deleteExpense(id) {
+
+    let transaction = db.transaction(["expenses"], "readwrite");
+    let store = transaction.objectStore("expenses");
+
+    let deleteRequest = store.delete(id);
+
+    deleteRequest.onsuccess = function() {
+        alert("Expense Deleted Successfully");
+        viewExpenses();
+    };
+
+    deleteRequest.onerror = function() {
+        alert("Error Deleting Expense");
+    };
+}
+
+</script>
+
+</body>
+</html>
+
+<!--  
+📌 Requirements
+1.Fields:
+oExpense Title
+oAmount
+oDate
+2.Buttons:
+oAdd Expense
+oView Expenses
+oDelete Expense
+3.Use:
+oClient-side database (Web SQL or IndexedDB)
+4.Execute SQL-like queries:
+oCREATE TABLE
+oINSERT
+oSELECT
+oDELETE
+5.Maintain transaction handling.
+6.Display expense list dynamically.
