@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Marks Analyzer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Marks Analyzer</h1>
+    <button id="analyzeBtn">Analyze Marks</button>
+    <div id="output">
+        <p id="marks"></p>
+        <p id="total"></p>
+        <p id="average"></p>
+        <p id="result"></p>
+    </div>
+</div>
+
+<script type="module">
+
+// ✅ Store marks in array
+const marks = [92, 85, 80, 95, 97];
+
+// ✅ Arrow function + reduce()
+const calculateTotal = (arr) =>
+    arr.reduce((sum, mark) => sum + mark, 0);
+
+// ✅ Arrow function for average
+const calculateAverage = (total, count) =>
+    total / count;
+
+// ✅ map() usage
+const formattedMarks = marks.map(mark => `Mark: ${mark}`);
+
+// Calculations
+const totalMarks = calculateTotal(marks);
+const averageMarks = calculateAverage(totalMarks, marks.length);
+
+// Pass / Fail
+const result = averageMarks >= 50 ? "PASS" : "FAIL";
+
+// Button click event
+document.getElementById("analyzeBtn").addEventListener("click", () => {
+
+    document.getElementById("output").innerHTML = `
+        <p><b>Total:</b> ${totalMarks}</p>
+        <p><b>Average:</b> ${averageMarks.toFixed(2)}</p>
+        <p><b>Result:</b> ${result}</p>
+    `;
+});
+</script>
+</body>
+</html>
+
+<!--  
+Requirements
+- Store student marks in an array.
+- Calculate total and average marks using array methods.
+- Display pass/fail result based on average.
+- Use let/const appropriately.
+- Use arrow functions for calculations.
+- Display output using template literals.-->
+<!--  

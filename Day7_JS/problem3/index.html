@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Fetcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌦 Weather Data Fetcher</h1>
+
+        <input type="text" id="city" placeholder="Enter City Name">
+        
+        <div class="buttons">
+            <button onclick="getWeatherPromise()">Using Promise</button>
+            <button onclick="getWeatherAsync()">Using Async/Await</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Requirements
+- Fetch data from a public API using fetch().
+- Implement version using Promises.
+- Implement version using async/await.
+- Handle errors properly.
+- Display formatted weather report. -->
