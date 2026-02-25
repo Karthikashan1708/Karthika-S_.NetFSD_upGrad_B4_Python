@@ -1,0 +1,46 @@
+/* Page base style */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Layout */
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* LIGHT THEME */
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+/* DARK THEME */
+.dark-theme {
+    background-color: #121212;
+    color: white;
+}
+
+/* Button common style */
+button {
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Button color in Light mode */
+.light-theme button {
+    background-color: black;
+    color: white;
+}
+
+/* Button color in Dark mode */
+.dark-theme button {
+    background-color: white;
+    color: black;
+}

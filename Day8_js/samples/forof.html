@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>For Of Example</title>
+    </head>
+<body>
+    <h2>for of Example</h2>
+    <button onclick="showFruits()">Show fruits</button>
+    <p id="output"></p>
+
+    <script>
+        function showFruits(){
+
+        
+         let fruits =["apple","mango","orange"];
+         let result="";
+         for(let fruit of fruits){
+            result+=fruit+"<br>";
+         }
+         document.getElementById("output").innerHTML=result;
+        
+        }
+
+    </script>
+</body>
+</html>

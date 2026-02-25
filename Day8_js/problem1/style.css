@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+   background: linear-gradient(to right, #6df9a3, #60a3ef);
+}
+
+textarea {
+    width: 300px;
+    height: 80px;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3450f3;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3898ff;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+    
+}
+
+/* Error class for CSS-based red color */
+.error {
+    color: red;
+}
+.success{
+    color: #046c2c;
+}

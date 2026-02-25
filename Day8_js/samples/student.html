@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Async Await Timer Example</title>
+</head>
+<body>
+
+    <h2>Async / Await Timer Demo</h2>
+    <button onclick="startProcess()">Start Process</button>
+
+    <p id="result"></p>
+
+<script>
+    // Function that returns a Promise
+    function waitThreeSeconds() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Process Completed after 2 seconds!");
+            }, 2000);
+        });
+    }
+
+    // Async function
+    async function startProcess() {
+        const output = document.getElementById("result");
+
+        output.innerHTML = "Processing... Please wait";
+
+        // Wait until promise resolves
+        let message = await waitThreeSeconds();
+
+        // After waiting
+        output.innerHTML = message;
+    }
+</script>
+
+</body>
+</html>
